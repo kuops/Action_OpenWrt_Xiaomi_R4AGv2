@@ -10,6 +10,7 @@ jobs:
     steps:
     - name: Image Builder Prerequisites
       run: |
+        sudo apt-get update
         sudo apt-get install -y build-essential libncurses-dev libncursesw-dev \
         zlib1g-dev gawk git gettext libssl-dev xsltproc rsync wget unzip python3
     - name: Build
