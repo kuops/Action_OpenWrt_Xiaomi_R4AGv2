@@ -16,7 +16,6 @@ jobs:
         python3-distutils rsync unzip zlib1g-dev file wget
     - name: Build
       run: |
-        wget https://downloads.immortalwrt.org/releases/23.05.1/targets/ramips/mt7621/immortalwrt-imagebuilder-23.05.1-ramips-mt7621.Linux-x86_64.tar.xz
-        pwd
+        curl -LO https://downloads.immortalwrt.org/releases/23.05.1/targets/ramips/mt7621/immortalwrt-imagebuilder-23.05.1-ramips-mt7621.Linux-x86_64.tar.xz
+        tar xf immortalwrt-imagebuilder-23.05.1-ramips-mt7621.Linux-x86_64.tar.xz
         ls -al
-        
