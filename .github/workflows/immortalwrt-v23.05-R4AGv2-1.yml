@@ -20,4 +20,9 @@ jobs:
         tar xf immortalwrt-imagebuilder-23.05.1-ramips-mt7621.Linux-x86_64.tar.xz
         ls -al
         cd immortalwrt-imagebuilder-23.05.1-ramips-mt7621.Linux-x86_64
-        make info
+        make image \
+        PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
+        PACKAGES="" \
+        FILES="files"
+        ls -al 
+        
