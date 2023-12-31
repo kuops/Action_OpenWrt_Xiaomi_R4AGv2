@@ -26,4 +26,4 @@ jobs:
         PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
         PACKAGES="luci-theme-argon luci-app-argon-config" \
         FILES="files"
-        tree
+        tree ./bin
