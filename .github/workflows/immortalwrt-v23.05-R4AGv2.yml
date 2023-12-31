@@ -22,8 +22,6 @@ jobs:
         curl -LO https://downloads.immortalwrt.org/releases/${VERSION}/targets/ramips/mt7621/immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64.tar.xz
         tar xf immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64.tar.xz
         cd immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64
-        echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> repositories.conf
-        echo 'src-git small https://github.com/kenzok8/small' >> repositories.conf
         make image \
         PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
         PACKAGES="luci-app-openclash" \
