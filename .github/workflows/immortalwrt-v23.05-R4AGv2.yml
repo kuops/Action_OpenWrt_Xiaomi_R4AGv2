@@ -24,5 +24,5 @@ jobs:
         cd immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64
         make image \
         PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
-        PACKAGES=""
+        PACKAGES="luci-app-openclash"
         tree
