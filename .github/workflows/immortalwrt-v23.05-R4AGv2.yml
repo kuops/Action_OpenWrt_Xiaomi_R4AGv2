@@ -23,6 +23,7 @@ jobs:
         tar xf immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64.tar.xz
         cd immortalwrt-imagebuilder-${VERSION}-ramips-mt7621.Linux-x86_64
         curl -Lo packages/luci-app-ssr-plus_git-24.310.56389-3018b1f_all.ipk https://op.dllkids.xyz/packages/mipsel_24kc/luci-app-ssr-plus_git-24.310.56389-3018b1f_all.ipk
+        echo "src custom file:///${GITHUB_WORKSPACE}/packages" >> repositories.conf
         make image \
         PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
         PACKAGES="luci-theme-argon luci-app-argon-config luci-app-ssr-plus" \
