@@ -25,6 +25,6 @@ jobs:
         echo "src/gz immortalwrt_custom https://op.dllkids.xyz/packages/mipsel_24kc" >> repositories.conf
         make image \
         PROFILE="xiaomi_mi-router-4a-gigabit-v2" \
-        PACKAGES="luci-theme-argon luci-app-argon-config" \
+        PACKAGES="luci-theme-argon luci-app-argon-config luci-app-ssr-plus" \
         FILES="files"
         tree ./bin
