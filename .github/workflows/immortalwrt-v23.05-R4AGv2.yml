@@ -26,4 +26,4 @@ jobs:
         grep -v 'CONFIG_TARGET_DEVICE' /tmp/offical-config > .config
         sed -i '/CONFIG_TARGET_MULTI_PROFILE/aCONFIG_TARGET_DEVICE_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit=y' .config
         sed -i '/CONFIG_TARGET_MULTI_PROFILE/aCONFIG_TARGET_DEVICE_PACKAGES_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit-v2="luci-app-ssr-plus"' .config
-
+        make -j$(nproc) defconfig download clean world
