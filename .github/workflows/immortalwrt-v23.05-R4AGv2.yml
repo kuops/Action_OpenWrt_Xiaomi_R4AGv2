@@ -18,7 +18,12 @@ jobs:
       run: |
         git clone -b openwrt-23.05 --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
         cd immortalwrt
-        sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-        sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
+        echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+        echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        curl -Lo /tmp/offical-config https://downloads.immortalwrt.org/releases/23.05.1/targets/ramips/mt7621/config.buildinfo
+        grep -v 'CONFIG_TARGET_DEVICE' /tmp/offical-config > .config
+        sed -i '/CONFIG_TARGET_MULTI_PROFILE/aCONFIG_TARGET_DEVICE_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit=y' .config
+        sed -i '/CONFIG_TARGET_MULTI_PROFILE/aCONFIG_TARGET_DEVICE_PACKAGES_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit-v2="luci-app-ssr-plus"' .config
+
