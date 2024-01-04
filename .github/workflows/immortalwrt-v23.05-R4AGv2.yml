@@ -26,7 +26,9 @@ jobs:
         grep -Ev 'CONFIG_TARGET_DEVICE|CONFIG_TARGET_MULTI_PROFILE' /tmp/offical-config > .config
         sed -i '/CONFIG_TARGET_ramips_mt7621/aCONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-4a-gigabit-v2=y' .config
         sed -i '/CONFIG_PACKAGE_zlib/aCONFIG_PACKAGE_luci-app-ssr-plus=y' .config
+        echo "Preview Offical Config"
         grep -Ev '^#|^$' .config
         make -j$(nproc) defconfig
-        echo "======================="
+        echo "Preview Result Config"
         grep -Ev '^#|^$' .config
+        make -j$(nproc) download clean world
