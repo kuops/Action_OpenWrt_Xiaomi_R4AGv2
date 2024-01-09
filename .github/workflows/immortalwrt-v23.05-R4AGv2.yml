@@ -28,6 +28,7 @@ jobs:
         sed -i '/CONFIG_PACKAGE_zlib/aCONFIG_PACKAGE_luci-app-ssr-plus=y' .config
         sed -i '/CONFIG_ALL_KMODS=y/d' .config
         sed -i '/CONFIG_ALL_NONSHARED=y/d' .config
+        sed -i '$aCONFIG_IPADDR="192.168.31.1"'
         echo "Preview Offical Config"
         grep -Ev '^#|^$' .config
         make -j$(nproc) defconfig
